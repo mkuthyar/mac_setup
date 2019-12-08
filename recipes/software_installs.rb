@@ -20,7 +20,7 @@ end
   end
 end
 
-%w(git docker r node yarn).each do |pkg|
+%w(git docker r node yarn python).each do |pkg|
   homebrew_package pkg do
     action :install
   end

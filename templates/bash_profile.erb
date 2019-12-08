@@ -1,0 +1,26 @@
+## Proper Chef Shell
+eval "$(chef shell-init bash)"
+
+## Open TextEdit when running "notepad" in terminal
+alias notepad="open -e"
+
+## Set proper startup path
+HOME=/Users/mihirkuthyar
+export HOME
+cd $HOME
+
+## Show git branch
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+## Set yarn path
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+## Remove default bash warning (zsh)
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+## Set default editor to vim
+export EDITOR=/usr/bin/vim
