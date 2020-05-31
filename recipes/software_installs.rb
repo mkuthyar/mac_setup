@@ -14,7 +14,7 @@ execute 'homebrew update' do
 end
 
 ## Install software package with homebrew and cask
-%w(vagrant virtualbox java atom postman).each do |pkg|
+%w(vagrant virtualbox java atom visual-studio-code postman drawio).each do |pkg|
   homebrew_cask pkg do
     action :install
   end
